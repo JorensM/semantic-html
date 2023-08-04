@@ -1,0 +1,68 @@
+body, html {
+    margin: 0px;
+}
+
+:root {
+    --color-primary-lightest: #DAD6FF;
+}
+
+header {
+    padding: 8px 16px;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+}
+
+.primary-header {
+    border-bottom: 1px solid gray;
+}
+
+.secondary-header {
+    padding: 0px;
+}
+
+nav > ul {
+    display: flex;
+    list-style-type: none;
+    gap: 16px;
+}
+
+main {
+    display: flex;
+}
+
+#main-articles {
+    box-sizing: border-box;
+    flex-grow: 1;
+    padding: 32px;
+    max-width: 600px;
+}
+
+#suggested-articles {
+    padding: 32px;
+    max-width: 256px;
+}
+
+article {
+    background-color: var(--color-primary-lightest);
+    padding: 16px;
+}
+
+address {
+    display: inline;
+    white-space: nowrap;
+}
+
+time {
+    display: block;
+}
+
+.post-preview > blockquote {
+    margin: 0px;
+}
+
+.article-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
