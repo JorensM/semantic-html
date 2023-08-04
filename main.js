@@ -73,10 +73,17 @@ const renderArticleBox = (article) => `
     <article class='post-preview' >
         <img src="${article.img || ''}" width='100%'/>
         <h2><a href='article.html?id=${article.id}'>${article.title}</a></h2>
-        By <address>${article.author}</address>
-        <time datetime="${article.date}">${article.date}</time>
+        
+        <aside class='meta-info'>
+            By
+            <address>
+                <a href='mailto:example@gmail.com'>${article.author}</a>
+            </address>
+            <time datetime="${article.date}">${article.date}</time>
+        </aside>
+        
         <blockquote class='article-excerpt'>
-            ${article.content.slice(0, 256)}
+            ${article.content.slice(0, 256)}...
         </blockquote>
     </article>
 `
