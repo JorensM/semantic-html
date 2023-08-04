@@ -6,6 +6,12 @@ body, html {
     --color-primary-lightest: #DAD6FF;
 }
 
+nav > ul {
+    display: flex;
+    list-style-type: none;
+    gap: 16px;
+}
+
 header {
     padding: 8px 16px;
     align-items: center;
@@ -13,48 +19,17 @@ header {
     display: flex;
 }
 
-.primary-header {
-    border-bottom: 1px solid gray;
-}
-
-.secondary-header {
-    padding: 0px;
-}
-
-nav > ul {
-    display: flex;
-    list-style-type: none;
-    gap: 16px;
-}
-
 main {
     display: flex;
-}
-
-#main-articles {
-    box-sizing: border-box;
-    flex-grow: 1;
-    padding: 32px;
-    max-width: 600px;
-}
-
-#suggested-articles {
-    padding: 32px;
-    max-width: 256px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 16px;
+    gap: 16px;
 }
 
 article {
     background-color: var(--color-primary-lightest);
-    padding: 16px;
-}
-
-address {
-    display: inline;
-    white-space: nowrap;
-}
-
-time {
-    display: block;
+    padding: 8px;
 }
 
 .post-preview > blockquote {
@@ -62,7 +37,94 @@ time {
 }
 
 .article-list {
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 16px;
+}
+
+#main-articles {
+    box-sizing: border-box;
+    /* flex-grow: 1; */
+    max-width: 100%;
+}
+
+#suggested-articles {
+    /* box-sizing: content-box; */
+    display: flex;
+    
+    /* min-width: 312px; */
+    max-width: 100%
+    /* max-width: 100%; */
+}
+
+@media screen and ( min-width: 312px ) {
+    #suggested-articles {
+        flex: 1 1 312px;
+        min-width: 312px;
+    }
+}
+
+@media screen and ( min-width: 600px ) {
+
+    #main-articles {
+        max-width: 664px;
+    }
+
+    #suggested-articles {
+        max-width: 664px;
+    }
+    
+    .primary-header {
+        border-bottom: 1px solid gray;
+    }
+    
+    .secondary-header {
+        padding: 0px;
+    }
+    
+    /* main {
+        display: flex;
+        padding: 32px;
+    } */
+    
+    /* #main-articles {
+        box-sizing: border-box;
+        flex-grow: 1;
+        padding: 32px;
+         max-width: 664px;
+    } */
+    
+    /* #suggested-articles {
+        padding: 32px;
+        max-width: 512px;
+    } */
+    
+    article {
+        
+        padding: 16px;
+    }
+    
+    address {
+        display: inline;
+        white-space: nowrap;
+    }
+    
+    time {
+        display: block;
+    }
+    
+    
+    
+    .article-list {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+}
+
+@media screen and ( min-width: 1025px ) {
+    #suggested-articles {
+        max-width: 438px;
+    }
 }
